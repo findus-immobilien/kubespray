@@ -1,6 +1,9 @@
 # Use imutable image tags rather than mutable tags (like ubuntu:20.04)
 FROM ubuntu:focal-20220316
 
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Berlin
+
 RUN apt update -y \
     && apt install -y \
     libssl-dev python3-dev sshpass apt-transport-https jq moreutils \
